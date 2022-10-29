@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        margin: auto;
+      }
+
+      .controle {
+        margin: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="controle">
+        <img id="dontSee" />
+        <img id="dontHear" />
+        <img id="dontSpeak" />
+      </div>
+      <div class="container">
+        <div class="controle">
+          <button id="seeing">dont see</button>
+          <button id="hearing">dont hear</button>
+          <button id="speaking">dont speak</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("seeing").addEventListener("click", evilEye);
+      document.getElementById("hearing").addEventListener("click", evilEar);
+      document.getElementById("speaking").addEventListener("click", evilMouth);
+
+      function evilEye() {
+        let eye = document.getElementById("dontSee");
+        eye.src = "see-no-evil.png";
+        document.getElementById("dontHear").src = "";
+        document.getElementById("dontSpeak").src = "";
+      }
+      function evilEar() {
+        let eye = document.getElementById("dontHear");
+        eye.src = "hear-no-evil.png";
+        document.getElementById("dontSee").src = "";
+        document.getElementById("dontSpeak").src = "";
+      }
+      function evilMouth() {
+        let eye = document.getElementById("dontSpeak");
+        eye.src = "speak-no-evil.png";
+        document.getElementById("dontHear").src = "";
+        document.getElementById("dontSee").src = "";
+      }
+    </script>
+  </body>
+</html>
